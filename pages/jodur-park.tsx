@@ -6,57 +6,28 @@ import Link from "next/link";
 const JodurParkPage: React.FC = () => {
   const features = [
     {
-      title: "بحيرة صناعية",
-      description: "بحيرة جميلة مع قوارب للتنزه",
+      title: "وادي المياه والسد",
+      description: "وادي جميل يحتوي على ممشى مظلل",
       icon: "🚣",
     },
     {
-      title: "حدائق مزهرة",
-      description: "حدائق منسقة بأزهار موسمية متنوعة",
-      icon: "🌺",
+      title: "الشلال",
+      description: "جلسات للتنزه مع إطلالات جميلة على الشلال",
+      icon: "🏞️",
     },
     {
       title: "مناطق عائلية",
       description: "جلسات عائلية مظللة ومريحة",
       icon: "👨‍👩‍👧‍👦",
     },
-    {
-      title: "مسرح مفتوح",
-      description: "مسرح للفعاليات والعروض الترفيهية",
-      icon: "🎭",
-    },
   ];
 
   const activities = [
-    "ركوب القوارب في البحيرة",
-    "الجلسات العائلية والاجتماعية",
+    "الجسر الزجاجي على الشلال",
+    "الشلالات والمياه الجارية",
+    "الجلسات العائلية والشبابية",
     "ممارسة الرياضات المختلفة",
-    "حضور الفعاليات والمهرجانات",
-    "التنزه في الممرات المظللة",
-    "الاستمتاع بالنوافير المائية",
-  ];
-
-  const events = [
-    {
-      title: "مهرجان الورود",
-      date: "مارس - أبريل",
-      description: "احتفال سنوي بموسم الورود والأزهار",
-    },
-    {
-      title: "فعاليات العيد",
-      date: "عيد الفطر والأضحى",
-      description: "برامج ترفيهية متنوعة للعائلات",
-    },
-    {
-      title: "مهرجان الصيف",
-      date: "يوليو - أغسطس",
-      description: "أنشطة صيفية وعروض مائية",
-    },
-    {
-      title: "احتفالات اليوم الوطني",
-      date: "23 سبتمبر",
-      description: "عروض وطنية وفعاليات تراثية",
-    },
+    "التنزه في الحدائق المختلقة",
   ];
 
   return (
@@ -174,7 +145,7 @@ const JodurParkPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <div
                 key={index}
@@ -237,132 +208,6 @@ const JodurParkPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Events Section */}
-      <section className="section-padding bg-gradient-to-b from-primary-50 to-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              الفعاليات والمهرجانات
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              برامج وفعاليات متنوعة على مدار السنة
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {events.map((event, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary-100 rounded-lg p-3">
-                    <svg
-                      className="w-8 h-8 text-primary-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-1">{event.title}</h3>
-                    <p className="text-primary-600 text-sm font-semibold mb-2">
-                      {event.date}
-                    </p>
-                    <p className="text-gray-600">{event.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 lg:p-12 text-white">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">كيف تصل إلينا</h2>
-                <p className="mb-6 text-lg leading-relaxed">
-                  يقع منتزه جدر في موقع متميز غرب مدينة الباحة، ويبعد عن وسط
-                  المدينة 10 كم.
-                </p>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="w-6 h-6 text-primary-300 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-bold mb-1">العنوان</p>
-                      <p>طريق الملك فهد، وسط مدينة الباحة</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <svg
-                      className="w-6 h-6 text-primary-300 mt-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-bold mb-1">مواقف السيارات</p>
-                      <p>يتوفر مواقف للسيارات بمساحة كبيرة</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1365.16192737343!2d41.387995082840604!3d20.059849381865206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ef49a5d47226d1%3A0xa792f9c62521fc86!2z2K3Yr9mK2YLYqSDYrNmE2Kkg2KzYr9ix!5e1!3m2!1sar!2ssa!4v1763393101658!5m2!1sar!2ssa"
-                  width="600"
-                  height="450"
-                  style={{ border: "0" }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
         <div className="container-custom">
@@ -375,13 +220,14 @@ const JodurParkPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              "photo-1588195538326-c5b1e9f80a1b",
-              "photo-1572115171910-bcb4ca4b9c04",
-              "photo-1551524559-8af4e6624178",
-              "photo-1542601906990-b4d3fb778b09",
-              "photo-1559070135-f259b369bf87",
-              "photo-1558618666-fcd25c85cd64",
-            ].map((photo, index) => (
+              // Add your 6 image links here
+              "https://media.assettype.com/sabq%2F2024-06%2F3f66286e-a4f1-40d2-a886-4c7c78625a0e%2FQbakKJRxpuLj0sT2PHFhqEqv9FdAoVxHFGYpvysq.webp?w=640&auto=format%2Ccompress",
+              "https://media.assettype.com/sabq%2F2024-06%2Fa62c51e8-0dfa-4ae5-b0ad-d34e4511fff4%2F9cY6ZFZ75laIozYLck2hfqbRo1qAp54A5V27KXIA.webp?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqB1xE7BmOeYkWVoP1RIgXlYggFZN2pXesBVTDseFS56RxiMwh3-QM_5jy3YD4Z3J4wWk&usqp=CAU",
+              "https://static.srpcdigital.com/styles/1037xauto/public/2025-02/954999.jpeg.webp",
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPGue4Jmf6rWIYIQbDeaUKYonE087Gy5JGbQ&s",
+              "https://media.assettype.com/sabq%2F2024-06%2Faa288f22-36e8-4e98-a23d-a7640a8f616d%2FxVrf4x0mqWsaJoY4GQc6CTMcnCS3qtvJIwsNtVzq.webp?w=1200&auto=format%2Ccompress",
+            ].map((imageUrl, index) => (
               <div
                 key={index}
                 className="relative h-64 rounded-xl overflow-hidden shadow-lg group cursor-pointer"
@@ -389,7 +235,7 @@ const JodurParkPage: React.FC = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: `url(https://images.unsplash.com/${photo}?q=80&w=500)`,
+                    backgroundImage: `url(${imageUrl})`,
                   }}
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
@@ -398,98 +244,27 @@ const JodurParkPage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Visitor Info Section */}
+      {/* Map Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="bg-gradient-to-b from-gray-50 to-white rounded-2xl shadow-xl p-8 lg:p-12">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              معلومات الزيارة
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              الموقع على الخريطة
             </h2>
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+              موقع منتزه جدر في منطقة الباحة
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    className="w-8 h-8 text-primary-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">أوقات العمل</h3>
-                <p className="text-gray-600">
-                  يومياً: 8:00 ص - 12:00 م<br />
-                  الجمعة: 1:00 م - 12:00 م
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    className="w-8 h-8 text-primary-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">رسوم الدخول</h3>
-                <p className="text-gray-600">
-                  الكبار: 10 ريال
-                  <br />
-                  الأطفال (أقل من 12): 5 ريال
-                  <br />
-                  أقل من 3 سنوات: مجاناً
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg
-                    className="w-8 h-8 text-primary-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold mb-2">للتواصل</h3>
-                <p className="text-gray-600">
-                  هاتف: 966-17-7251234+
-                  <br />
-                  البريد: jodurpark@albaha.sa
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-primary-50 rounded-xl p-6 mt-8">
-              <h3 className="text-xl font-bold mb-4 text-center">
-                إرشادات مهمة
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-6 text-primary-900">
+                معلومات الموقع
               </h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
-                <li className="flex items-start gap-2">
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-600 mt-0.5"
+                    className="w-6 h-6 text-primary-600 mt-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -498,14 +273,24 @@ const JodurParkPage: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M5 13l4 4L19 7"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span>المحافظة على نظافة المكان</span>
-                </li>
-                <li className="flex items-start gap-2">
+                  <div>
+                    <p className="font-bold mb-1">الموقع</p>
+                    <p>10 كم غرب مدينة الباحة</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-600 mt-0.5"
+                    className="w-6 h-6 text-primary-600 mt-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -514,14 +299,18 @@ const JodurParkPage: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M5 13l4 4L19 7"
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
                     />
                   </svg>
-                  <span>مراقبة الأطفال بشكل دائم</span>
-                </li>
-                <li className="flex items-start gap-2">
+                  <div>
+                    <p className="font-bold mb-1">العنوان</p>
+                    <p>طريق الملك فهد، الباحة</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-600 mt-0.5"
+                    className="w-6 h-6 text-primary-600 mt-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -530,14 +319,18 @@ const JodurParkPage: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M5 13l4 4L19 7"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-                  <span>احترام الخصوصية العائلية</span>
-                </li>
-                <li className="flex items-start gap-2">
+                  <div>
+                    <p className="font-bold mb-1">التصنيف</p>
+                    <p>منتزه طبيعي وحديقة عامة</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-primary-600 mt-0.5"
+                    className="w-6 h-6 text-primary-600 mt-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -546,24 +339,27 @@ const JodurParkPage: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth="2"
-                      d="M5 13l4 4L19 7"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span>الالتزام بتعليمات السلامة</span>
-                </li>
-              </ul>
+                  <div>
+                    <p className="font-bold mb-1">مواقف السيارات</p>
+                    <p>مواقف واسعة متوفرة للزوار</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="text-center mt-12">
-              <Link href="/" className="btn-primary text-lg px-8 py-4 ml-4">
-                العودة للصفحة الرئيسية
-              </Link>
-              <Link
-                href="/thee-ain"
-                className="btn-secondary text-lg px-8 py-4"
-              >
-                زيارة ذي عين
-              </Link>
+            <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1365.16192737343!2d41.387995082840604!3d20.059849381865206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ef49a5d47226d1%3A0xa792f9c62521fc86!2z2K3Yr9mK2YLYqSDYrNmE2Kkg2KzYr9ix!5e1!3m2!1sar!2ssa!4v1763393101658!5m2!1sar!2ssa"
+                width="600"
+                height="450"
+                style={{ border: "0" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
         </div>

@@ -296,6 +296,125 @@ const RaghdanParkPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Map Section */}
+      <section className="section-padding bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">الموقع على الخريطة</h2>
+            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+              موقع غابة رغدان في منطقة الباحة
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold mb-6 text-primary-900">
+                معلومات الموقع
+              </h3>
+              <div className="space-y-4 text-gray-700">
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-6 h-6 text-primary-600 mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-bold mb-1">الموقع</p>
+                    <p>4 كم شمال غرب مدينة الباحة</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-6 h-6 text-primary-600 mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-bold mb-1">المساحة</p>
+                    <p>أكثر من 600,000 متر مربع</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-6 h-6 text-primary-600 mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-bold mb-1">الارتفاع</p>
+                    <p>أكثر من 1700 متر فوق مستوى سطح البحر</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <svg
+                    className="w-6 h-6 text-primary-600 mt-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <div>
+                    <p className="font-bold mb-1">مواقف السيارات</p>
+                    <p>مواقف واسعة تتسع لأكثر من 500 سيارة</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14432.4567890123!2d41.46194441500757!3d20.00700008702345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15ef4cd987654321%3A0xfedcba0987654321!2sRaghadan%20Forest%20Park!5e0!3m2!1sen!2ssa!4v1234567890123!5m2!1sen!2ssa"
+                width="600"
+                height="450"
+                style={{ border: "0" }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section className="section-padding bg-gradient-to-b from-gray-50 to-white">
         <div className="container-custom">
