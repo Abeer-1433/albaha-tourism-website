@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اختبار خطوط Saudi Web</title>
+    <style>
+        @font-face {
+            font-family: 'Saudi Web';
+            src: url('/fonts/SaudiWeb-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Saudi Web';
+            src: url('/fonts/SaudiWeb-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Saudi Web', system-ui, sans-serif;
+            direction: rtl;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #16a34a;
+            padding-bottom: 20px;
+        }
+
+        .regular {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .bold {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #333;
+            margin: 20px 0;
+        }
+
+        .sample-text {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .status {
+            padding: 10px;
+            background: #e0f7fa;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        .font-loaded {
+            color: #16a34a;
+            font-weight: bold;
+        }
+
+        .font-error {
+            color: #dc2626;
+            font-weight: bold;
+        }
+
+        .sizes {
+            margin: 30px 0;
+        }
+
+        .size-12 { font-size: 12px; }
+        .size-16 { font-size: 16px; }
+        .size-20 { font-size: 20px; }
+        .size-24 { font-size: 24px; }
+        .size-32 { font-size: 32px; }
+        .size-48 { font-size: 48px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>اختبار خطوط Saudi Web</h1>
+
+        <div id="status" class="status">
+            جاري فحص تحميل الخطوط...
+        </div>
+
+        <div class="sample-text">
+            <h2>نص عادي (Regular - 400)</h2>
+            <p class="regular">
+                مرحباً بكم في منطقة الباحة، جوهرة المملكة العربية السعودية.
+                تتميز المنطقة بطبيعتها الخلابة وجوها المعتدل ومعالمها السياحية الرائعة.
+                من قرية ذي عين الأثرية إلى غابة رغدان الطبيعية، تقدم الباحة تجربة سياحية لا تُنسى.
+            </p>
+        </div>
+
+        <div class="sample-text">
+            <h2>نص عريض (Bold - 700)</h2>
+            <p class="bold">
+                اكتشف جمال الباحة الساحر!
+                زُر المعالم السياحية المميزة واستمتع بالطبيعة الخلابة.
+                تجربة فريدة تنتظرك في قلب المملكة العربية السعودية.
+            </p>
+        </div>
+
+        <div class="sizes">
+            <h2>أحجام مختلفة للخط</h2>
+            <p class="size-12">حجم 12px - منطقة الباحة السياحية</p>
+            <p class="size-16">حجم 16px - منطقة الباحة السياحية</p>
+            <p class="size-20">حجم 20px - منطقة الباحة السياحية</p>
+            <p class="size-24">حجم 24px - منطقة الباحة السياحية</p>
+            <p class="size-32 bold">حجم 32px عريض - منطقة الباحة</p>
+            <p class="size-48 bold">حجم 48px - الباحة</p>
+        </div>
+
+        <div class="sample-text">
+            <h2>أرقام وأحرف إنجليزية</h2>
+            <p class="regular">
+                التأسيس: 1383 هـ - 1963م<br>
+                المساحة: 15,000 كم²<br>
+                عدد السكان: 476,172 نسمة<br>
+                Al Baha Tourism Website - Saudi Arabia<br>
+                Phone: +966-17-7250000<br>
+                Email: info@albaha-tourism.sa
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Check if fonts are loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const statusEl = document.getElementById('status');
+
+            // Check font loading
+            document.fonts.ready.then(function() {
+                const fontCheckRegular = document.fonts.check('400 16px "Saudi Web"');
+                const fontCheckBold = document.fonts.check('700 16px "Saudi Web"');
+
+                if (fontCheckRegular && fontCheckBold) {
+                    statusEl.innerHTML = '<span class="font-loaded">✓ خطوط Saudi Web تم تحميلها بنجاح!</span>';
+                    statusEl.style.background = '#d4edda';
+                } else if (fontCheckRegular) {
+                    statusEl.innerHTML = '<span class="font-loaded">✓ Saudi Web Regular محمل</span> | <span class="font-error">✗ Saudi Web Bold غير محمل</span>';
+                    statusEl.style.background = '#fff3cd';
+                } else if (fontCheckBold) {
+                    statusEl.innerHTML = '<span class="font-error">✗ Saudi Web Regular غير محمل</span> | <span class="font-loaded">✓ Saudi Web Bold محمل</span>';
+                    statusEl.style.background = '#fff3cd';
+                } else {
+                    statusEl.innerHTML = '<span class="font-error">✗ فشل تحميل خطوط Saudi Web</span>';
+                    statusEl.style.background = '#f8d7da';
+                }
+
+                // List all loaded fonts
+                const loadedFonts = [];
+                for (const font of document.fonts.values()) {
+                    if (font.status === 'loaded') {
+                        loadedFonts.push(`${font.family} ${font.weight}`);
+                    }
+                }
+
+                if (loadedFonts.length > 0) {
+                    statusEl.innerHTML += '<br>الخطوط المحملة: ' + loadedFonts.join(', ');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

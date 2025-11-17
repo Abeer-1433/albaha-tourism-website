@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: white;
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .info {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+            <source src="/videos/video-bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay">
+            <h1>اختبار الفيديو</h1>
+        </div>
+    </div>
+
+    <div class="info">
+        <h2>معلومات تقنية:</h2>
+        <div id="status"></div>
+        <button onclick="playVideo()">تشغيل الفيديو</button>
+        <button onclick="pauseVideo()">إيقاف مؤقت</button>
+        <button onclick="muteToggle()">تبديل الصوت</button>
+    </div>
+
+    <script>
+        const video = document.getElementById('bgVideo');
+        const status = document.getElementById('status');
+
+        function updateStatus(message, isError = false) {
+            const div = document.createElement('div');
+            div.className = 'status ' + (isError ? 'error' : 'success');
+            div.textContent = new Date().toLocaleTimeString('ar-SA') + ': ' + message;
+            status.appendChild(div);
+            console.log(message);
+        }
+
+        // Video event listeners
+        video.addEventListener('loadstart', () => updateStatus('بدأ تحميل الفيديو...'));
+        video.addEventListener('loadeddata', () => updateStatus('تم تحميل بيانات الفيديو'));
+        video.addEventListener('loadedmetadata', () => {
+            updateStatus(`معلومات الفيديو: ${video.videoWidth}x${video.videoHeight}, المدة: ${video.duration.toFixed(2)} ثانية`);
+        });
+        video.addEventListener('canplay', () => updateStatus('يمكن تشغيل الفيديو'));
+        video.addEventListener('canplaythrough', () => updateStatus('يمكن تشغيل الفيديو بالكامل دون انقطاع'));
+        video.addEventListener('play', () => updateStatus('بدأ تشغيل الفيديو'));
+        video.addEventListener('pause', () => updateStatus('توقف الفيديو مؤقتاً'));
+        video.addEventListener('ended', () => updateStatus('انتهى الفيديو'));
+        video.addEventListener('error', (e) => {
+            const errorMessage = `خطأ في تحميل الفيديو: ${e.message || 'Unknown error'}`;
+            updateStatus(errorMessage, true);
+            console.error('Video error:', e);
+        });
+
+        // Auto-play attempt
+        video.play().then(() => {
+            updateStatus('التشغيل التلقائي نجح');
+        }).catch((error) => {
+            updateStatus(`فشل التشغيل التلقائي: ${error.message}`, true);
+            updateStatus('انقر على زر "تشغيل الفيديو" لبدء التشغيل', true);
+        });
+
+        // Control functions
+        function playVideo() {
+            video.play().then(() => {
+                updateStatus('تم تشغيل الفيديو يدوياً');
+            }).catch((error) => {
+                updateStatus(`فشل التشغيل: ${error.message}`, true);
+            });
+        }
+
+        function pauseVideo() {
+            video.pause();
+        }
+
+        function muteToggle() {
+            video.muted = !video.muted;
+            updateStatus(video.muted ? 'تم كتم الصوت' : 'تم تشغيل الصوت');
+        }
+
+        // Check video source
+        updateStatus(`مصدر الفيديو: ${video.currentSrc || video.querySelector('source').src}`);
+    </script>
+</body>
+</html>

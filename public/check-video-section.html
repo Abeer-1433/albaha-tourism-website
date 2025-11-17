@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Video Section</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .status-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { color: blue; }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover { background: #45a049; }
+        pre {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>فحص قسم الفيديو - Video Section Check</h1>
+
+    <div class="status-box">
+        <h2>معلومات الصفحة</h2>
+        <p>URL: <span id="currentUrl"></span></p>
+        <button onclick="checkMainPage()">فحص الصفحة الرئيسية</button>
+        <button onclick="checkVideoFile()">فحص ملف الفيديو</button>
+        <button onclick="scrollToVideo()">الذهاب لقسم الفيديو</button>
+    </div>
+
+    <div class="status-box">
+        <h2>نتائج الفحص</h2>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const results = document.getElementById('results');
+        document.getElementById('currentUrl').textContent = window.location.origin;
+
+        async function checkMainPage() {
+            results.innerHTML = '<p class="info">جاري فحص الصفحة الرئيسية...</p>';
+
+            try {
+                const response = await fetch('/');
+                const html = await response.text();
+
+                // Check for VideoSection in the HTML
+                const hasVideoSection = html.includes('فيديو تعريفي بالباحة');
+                const hasVideoComponent = html.includes('VideoSection');
+                const hasPlayButton = html.includes('Play video') || html.includes('play-button');
+
+                let output = '<h3>نتائج فحص HTML:</h3>';
+                output += `<p>قسم الفيديو موجود: ${hasVideoSection ? '<span class="success">نعم ✓</span>' : '<span class="error">لا ✗</span>'}</p>`;
+                output += `<p>مكون VideoSection: ${hasVideoComponent ? '<span class="success">نعم ✓</span>' : '<span class="error">لا ✗</span>'}</p>`;
+                output += `<p>زر التشغيل: ${hasPlayButton ? '<span class="success">نعم ✓</span>' : '<span class="error">لا ✗</span>'}</p>`;
+
+                // Extract section titles
+                const sectionTitles = html.match(/<h2[^>]*>([^<]+)<\/h2>/g);
+                if (sectionTitles) {
+                    output += '<h4>الأقسام الموجودة في الصفحة:</h4><ol>';
+                    sectionTitles.forEach(title => {
+                        const cleanTitle = title.replace(/<[^>]+>/g, '');
+                        output += `<li>${cleanTitle}</li>`;
+                    });
+                    output += '</ol>';
+                }
+
+                results.innerHTML = output;
+
+                if (hasVideoSection) {
+                    results.innerHTML += '<p class="success">✅ قسم الفيديو موجود في الصفحة!</p>';
+                } else {
+                    results.innerHTML += '<p class="error">⚠️ قسم الفيديو غير موجود. قد تحتاج إلى إعادة تحميل الصفحة.</p>';
+                }
+
+            } catch (error) {
+                results.innerHTML = `<p class="error">خطأ: ${error.message}</p>`;
+            }
+        }
+
+        async function checkVideoFile() {
+            results.innerHTML = '<p class="info">جاري فحص ملف الفيديو...</p>';
+
+            try {
+                const response = await fetch('/videos/video-bg.mp4', { method: 'HEAD' });
+
+                let output = '<h3>حالة ملف الفيديو:</h3>';
+                output += `<p>الحالة: ${response.ok ? '<span class="success">موجود ✓</span>' : '<span class="error">غير موجود ✗</span>'}</p>`;
+                output += `<p>HTTP Status: ${response.status}</p>`;
+
+                if (response.ok) {
+                    const size = response.headers.get('content-length');
+                    if (size) {
+                        output += `<p>حجم الملف: ${(parseInt(size) / 1024 / 1024).toFixed(2)} MB</p>`;
+                    }
+                }
+
+                results.innerHTML = output;
+
+            } catch (error) {
+                results.innerHTML = `<p class="error">خطأ: ${error.message}</p>`;
+            }
+        }
+
+        function scrollToVideo() {
+            window.open('/', '_blank');
+            results.innerHTML = '<p class="info">تم فتح الصفحة الرئيسية في تبويب جديد. ابحث عن قسم بخلفية خضراء فاتحة.</p>';
+        }
+
+        // Auto-check on load
+        window.onload = () => {
+            checkMainPage();
+        };
+    </script>
+</body>
+</html>
