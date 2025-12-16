@@ -31,7 +31,8 @@ const destinations = [
     title: "منتزه جدر",
     description:
       "منتزه عائلي مميز يوفر مساحات خضراء واسعة ومرافق ترفيهية متنوعة",
-    image: "/images/jodur.png",
+    image:
+      "https://portalcdn.spa.gov.sa/backend/original/202406/4i53OXTYnxbzXnhhPxd8OSIcfa8ly9iZ0ihyBHoI.jpg",
     link: "/jodur-park",
     features: ["منتزه عائلي", "مساحات خضراء", "مرافق ترفيهية"],
   },
@@ -350,18 +351,31 @@ const HomePage: React.FC = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800')",
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800')",
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 p-6 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      />
                     </svg>
                     <h3 className="text-xl font-bold">المزارع السياحية</h3>
                   </div>
-                  <p className="text-sm text-gray-200">تجارب زراعية وريفية أصيلة</p>
+                  <p className="text-sm text-gray-200">
+                    تجارب زراعية وريفية أصيلة
+                  </p>
                 </div>
               </div>
             </Link>
@@ -372,14 +386,25 @@ const HomePage: React.FC = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800')",
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800')",
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 p-6 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
                     </svg>
                     <h3 className="text-xl font-bold">أماكن الإقامة</h3>
                   </div>
@@ -394,18 +419,31 @@ const HomePage: React.FC = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800')",
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800')",
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 p-6 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h18M3 7h18M3 11h18M3 15h18M3 19h18" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M3 3h18M3 7h18M3 11h18M3 15h18M3 19h18"
+                      />
                     </svg>
                     <h3 className="text-xl font-bold">المطاعم والمقاهي</h3>
                   </div>
-                  <p className="text-sm text-gray-200">أشهى المأكولات المحلية</p>
+                  <p className="text-sm text-gray-200">
+                    أشهى المأكولات المحلية
+                  </p>
                 </div>
               </div>
             </Link>
@@ -416,14 +454,25 @@ const HomePage: React.FC = () => {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{
-                    backgroundImage: "url('https://images.unsplash.com/photo-1578662996442-48f60103fc9e?w=800')",
+                    backgroundImage:
+                      "url('https://images.unsplash.com/photo-1578662996442-48f60103fc9e?w=800')",
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-0 p-6 text-white">
                   <div className="flex items-center gap-2 mb-2">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    <svg
+                      className="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                      />
                     </svg>
                     <h3 className="text-xl font-bold">الأسواق الشعبية</h3>
                   </div>
@@ -440,19 +489,27 @@ const HomePage: React.FC = () => {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary-600 mb-2">20+</div>
+              <div className="text-4xl font-bold text-primary-600 mb-2">
+                20+
+              </div>
               <p className="text-gray-600">معلم سياحي</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary-600 mb-2">15+</div>
+              <div className="text-4xl font-bold text-primary-600 mb-2">
+                15+
+              </div>
               <p className="text-gray-600">فندق ومنتجع</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary-600 mb-2">30+</div>
+              <div className="text-4xl font-bold text-primary-600 mb-2">
+                30+
+              </div>
               <p className="text-gray-600">مطعم ومقهى</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-primary-600 mb-2">400+</div>
+              <div className="text-4xl font-bold text-primary-600 mb-2">
+                400+
+              </div>
               <p className="text-gray-600">سنة من التراث</p>
             </div>
           </div>
@@ -469,10 +526,7 @@ const HomePage: React.FC = () => {
             خطط لزيارتك اليوم واستمتع بتجربة سياحية لا تُنسى
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/tourist-farms"
-              className="btn-secondary"
-            >
+            <Link href="/tourist-farms" className="btn-secondary">
               المزارع السياحية
             </Link>
             <Link
